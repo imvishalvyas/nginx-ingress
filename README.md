@@ -28,20 +28,19 @@ helm install nginx-ingress ingress-nginx/ingress-nginx
   apiVersion: networking.k8s.io/v1
   kind: Ingress
   metadata:
-    name: example
-    namespace: foo
+    name: ingress
   spec:
     ingressClassName: nginx
     rules:
-      - host: www.example.com
+      - host: vishalvyas.com
         http:
           paths:
             - pathType: Prefix
               backend:
                 service:
-                  name: exampleService
+                  name: myapp
                   port:
-                    number: 80
+                    number: 3000
               path: /
 
 ```
@@ -110,7 +109,7 @@ Lets Update let's encrypt staging issuer in nginx ingress and TLS secret.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: versioning
+  name: ingress
   annotations:
     cert-manager.io/issuer: "letsencrypt-staging"
 spec:
@@ -149,7 +148,7 @@ Now it's time to update production cluster issuer in the ingress controller.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: versioning
+  name: ingress
   annotations:
     cert-manager.io/issuer: "letsencrypt-prod
 spec:
