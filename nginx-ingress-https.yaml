@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"  
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: vishalvyas.com
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: myapp
+                port:
+                  number: 3000
+            path: /
+            
+  # This section is only required if TLS is to be enabled for the Ingress
+  tls:
+  - hosts:
+    - vishalvyas.com
+    secretName: vishalvyas
+
