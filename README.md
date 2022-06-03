@@ -109,12 +109,13 @@ spec:
     - http01:
         ingress:
           class: nginx
-```      
-
+```
+     
 ### Update Nginx ingress
 Lets Update let's encrypt staging issuer in nginx ingress and TLS secret.
 
 - kubectl apply -f `ingress.yaml`
+
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -142,18 +143,23 @@ spec:
     - vishalvyas.com
     secretName: vishalvyas
 ```
+
 Cert-manager will read these annotations and use them to create a certificate, which you can request and see and wait until the status `True`
+
 ```
 kubectl get certificate vishalvyas 
 ```
+
 ```
 NAME         READY   SECRET       AGE
 vishalvyas   True    vishalvyas   32m
 ```
+
 ### Update production issuer
 Now it's time to update production cluster issuer in the ingress controller.
 
 - kubectl apply -f `ingress.yaml
+
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -181,15 +187,19 @@ spec:
     - vishalvyas.com
     secretName: vishalvyas
 ``` 
+
 We also need to delete the existing secret which we create for staging, Cert manager will reprocess the request and update issuer.
+
 ```
 kubectl delete secret quickstart-example-tls
 ```
 You can check the status of your certificates using this command.
+
 ```
 kubectl describe certificate vishalvyas
 ```
 You can see that certificates successfully issue.
+
 ```
   Normal  Generated  33m                cert-manager-certificates-key-manager      Stored new private key in temporary Secret resource "vishalvyas-6nkfs"
   Normal  Requested  33m                cert-manager-certificates-request-manager  Created new CertificateRequest resource "vishalvyas-hpt58"
