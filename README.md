@@ -5,6 +5,7 @@ In this post, I will show you How to Install and configure the Nginx ingress con
 
 ### Install helm 
 Helm is a package manager for Kubernetes. Helm is useful to create deployments, Automation, packaging, and configuring applications and services on Kubernetes.
+
 ```
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
@@ -54,7 +55,6 @@ helm install nginx-ingress ingress-nginx/ingress-nginx
 
 ```
 
-
 ### Install Cert manager
 ```
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.0/cert-manager.yaml
@@ -89,6 +89,7 @@ spec:
 Also create `production-issuer.yaml`
 
 - kubectl create -f `production-issuer.yaml`
+
 ```
 apiVersion: cert-manager.io/v1
 kind: Issuer
