@@ -6,21 +6,21 @@ In this post, I will show you How to Install and configure the Nginx ingress con
 ### Install helm 
 Helm is a package manager for Kubernetes. Helm is useful to create deployments, Automation, packaging, and configuring applications and services on Kubernetes.
 
-```
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
-curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+`helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
 
-sudo apt-get install apt-transport-https --yes
+`curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -`
 
-echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+`sudo apt-get install apt-transport-https --yes`
 
-sudo apt-get update
+`echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list`
 
-sudo apt-get install helm
+`sudo apt-get update`
 
-helm version
-```
+`sudo apt-get install helm`
+
+`helm version`
+
 
 ### Install Nginx ingress
 ```
