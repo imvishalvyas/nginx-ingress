@@ -7,28 +7,28 @@ In this post, I will show you How to Install and configure the Nginx ingress con
 Helm is a package manager for Kubernetes. Helm is useful to create deployments, Automation, packaging, and configuring applications and services on Kubernetes.
 
 
-* `helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
+`helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
 
-* `curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -`
+`curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -`
 
-* `sudo apt-get install apt-transport-https --yes`
+`sudo apt-get install apt-transport-https --yes`
 
-* `echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list`
+`echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list`
 
-* `sudo apt-get update`
+`sudo apt-get update`
 
-* `sudo apt-get install helm`
+`sudo apt-get install helm`
 
-* `helm version`
+`helm version`
 
 
 ### 2. Install Nginx ingress
 
-* `helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
+`helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx`
 
-* `helm repo update`
+`helm repo update`
 
-* `helm install nginx-ingress ingress-nginx/ingress-nginx`
+`helm install nginx-ingress ingress-nginx/ingress-nginx`
 
 
 Run below command to get the ingress controller public IP Adress and point it to the domain you have.
