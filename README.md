@@ -102,7 +102,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 There is a rate limit on Let's Encrypt production issuer. We will start with Let's Encrypt staging issuer first and then will move to the production issuer.
 Run below command and `Replace your email address`. 
 
-- `kubectl create --edit -f https://raw.githubusercontent.com/cert-manager/website/master/content/docs/tutorials/acme/example/staging-issuer.yaml`
+`kubectl create --edit -f https://raw.githubusercontent.com/cert-manager/website/master/content/docs/tutorials/acme/example/staging-issuer.yaml`
 
 
 ```
