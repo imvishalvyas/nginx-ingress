@@ -166,7 +166,7 @@ apiVersion: cert-manager.io/v1
 ### Update Nginx ingress
 Lets Update let's encrypt staging issuer in nginx ingress and TLS secret.
 ```
-kubectl apply -f `ingress.yaml
+kubectl apply -f ingress.yaml
 ```
 Make sure to update staging issuer `cert-manager.io/issuer: "letsencrypt-staging"`
 ```
