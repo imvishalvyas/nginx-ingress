@@ -210,9 +210,9 @@ vishalvyas   True    vishalvyas   32m
 
 ### Update production issuer
 Now it's time to update production cluster issuer in the ingress controller.
-
-- kubectl apply -f `ingress.yaml`
-
+```
+kubectl apply -f ingress.yaml
+```
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
